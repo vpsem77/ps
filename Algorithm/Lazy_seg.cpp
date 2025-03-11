@@ -15,28 +15,28 @@ void upd_lazy(int ix, int l, int r){
     return;
 }
 
-void upd(int ix, int nl, int nr, int l, int r, ll v){
-    upd_lazy(ix, nl, nr);
-    if(nl > r || nr < l) return;
-    if(nl >= l && nr <= r){
+void upd(int ix, int s, int e, int l, int r, ll v){
+    upd_lazy(ix, s, e);
+    if(s > r || e < l) return;
+    if(s >= l && e <= r){
         lazy[ix] += v;
-        upd_lazy(ix, nl, nr);
+        upd_lazy(ix, s, e);
         return;
     }
-    int m = (nl + nr) / 2;
-    upd(ix * 2, nl, m, l, r, v);
-    upd(ix * 2 + 1, m + 1, nr, l, r, v);
+    int m = (s + e) / 2;
+    upd(ix * 2, s, m, l, r, v);
+    upd(ix * 2 + 1, m + 1, e, l, r, v);
     // modify here
     seg[ix] = seg[ix * 2] + seg[ix * 2 + 1];
     return;
 }
 
-ll qry(int ix, int nl, int nr, int l, int r){
-    upd_lazy(ix, nl, nr);
+ll qry(int ix, int s, int e, int l, int r){
+    upd_lazy(ix, s, e);
     // 더미값 return
-    if(nl > r || nr < l) return 0;
-    if(nl >= l && nr <= r) return seg[ix];
-    int m = (nl + nr) / 2;
+    if(s > r || e < l) return 0;
+    if(s >= l && e <= r) return seg[ix];
+    int m = (s + e) / 2;
     // modify here
-    return qry(ix * 2, nl, m, l, r) + qry(ix * 2 + 1, m + 1, nr, l, r);
+    return qry(ix * 2, s, m, l, r) + qry(ix * 2 + 1, m + 1, e, l, r);
 }
