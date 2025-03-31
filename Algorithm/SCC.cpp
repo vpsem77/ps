@@ -30,3 +30,6 @@ int dfs(int cur){
     }
     return res;
 }
+
+for(int i=0; i<V; i++)
+    if(dfsn[i] == 0) dfs(i);
