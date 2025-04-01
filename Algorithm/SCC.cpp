@@ -31,5 +31,5 @@ int dfs(int cur){
     return res;
 }
 
-for(int i=0; i<V; i++)
+for(int i=0; i<v; i++)
     if(dfsn[i] == 0) dfs(i);
