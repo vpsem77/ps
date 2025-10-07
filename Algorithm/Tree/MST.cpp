@@ -1,6 +1,7 @@
+const int NMAX = 100005
 int n, m;
-tuple<int, int, int> adj[100005];
-int par[100005];
+tuple<int, int, int> adj[NMAX];
+int par[NMAX];
 int find(int x) {
     if (par[x] == -1) return x;
     return par[x] = find(par[x]);
