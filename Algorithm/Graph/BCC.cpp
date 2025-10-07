@@ -1,6 +1,6 @@
-const int MAX = 10005;
-int v, e, dcnt, dfsn[MAX], vis[MAX];
-vector<int> adj[MAX];
+const int NMAX = 10005;
+int v, e, dcnt, dfsn[NMAX], vis[NMAX];
+vector<int> adj[NMAX];
 stack<pair<int,int>> S;
 vector<vector<pair<int,int>>> bcc;
 
