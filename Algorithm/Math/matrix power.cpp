@@ -1,4 +1,4 @@
-const ll MOD = 1e9;
+const ll mod = 1e9;
 
 typedef vector<vector<ll>> matrix;
 matrix operator*(const matrix &a, const matrix &b) {
@@ -8,9 +8,9 @@ matrix operator*(const matrix &a, const matrix &b) {
         for (int j = 0; j < size2; j++) {
             for (int k = 0; k < size3; k++) {
                 res[i][j] += a[i][k] * b[k][j];
-                res[i][j] %= MOD;
+                res[i][j] %= mod;
             }
-            res[i][j] %= MOD;
+            res[i][j] %= mod;
         }
     return res;
 }
