@@ -1,7 +1,7 @@
-const int MAX = 10005;
-int v, e, cnt, sn[MAX], SN, dfsn[MAX];
-vector<int> adj[MAX];
-bool finished[MAX];
+const int NMAX = 10005;
+int v, e, cnt, sn[NMAX], SN, dfsn[NMAX];
+vector<int> adj[NMAX];
+bool finished[NMAX];
 stack<int> S;
 vector<vector<int>> SCC;
 
