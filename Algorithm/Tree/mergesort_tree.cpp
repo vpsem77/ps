@@ -1,9 +1,4 @@
-//BOJ 13537 AC CODE
 // thank you for djs100201
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long;
-#define all(v) v.begin(), v.end()
 const int NMAX = 2505;
 const int INF = 1e9;
 
@@ -46,9 +41,3 @@ void solve() {
     }
 }
 
-int main() {
-    cin.tie(0)->sync_with_stdio(0);
-    int tc = 1;
-    // cin >> tc;
-    while (tc--) solve();
-}
