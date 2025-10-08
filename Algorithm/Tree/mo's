@@ -1,0 +1,62 @@
+//13547 ac code
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define all(v) v.begin(), v.end()
+
+ll n, sqrtn, cnt[1000005];
+
+bool cmp(array<ll,3> x, array<ll,3> y){
+    if(x[0] / sqrtn == y[0] / sqrtn) return x[1] < y[1];
+    return x[0] / sqrtn < y[0] / sqrtn;
+}
+
+void solve() {
+    cin >> n;
+    sqrtn = sqrt(n);
+    vector<ll> a(n + 5);
+    for(int i = 1; i <= n; i++) cin >> a[i];
+    ll q; cin >> q;
+    vector<array<ll,3>> query(q);
+    for(int i = 0; i < q; i++){
+        ll s, e; cin >> s >> e;
+        query[i] = {s, e, i};
+    }
+    sort(all(query), cmp);
+    vector<ll> res(q);
+    ll mx = 0;
+    auto[s, e, ix] = query[0];
+    for(int i = s; i <= e; i++){
+        if(cnt[a[i]] == 0) mx++;
+        cnt[a[i]]++;
+    }
+    res[ix] = mx;
+    for(int i = 1; i < q; i++){
+        auto[x, y, ii] = query[i];
+        while(x < s){
+            if(cnt[a[s - 1]] == 0) mx++;
+            cnt[a[--s]]++;
+        }
+        while(x > s){
+            if(cnt[a[s]] == 1) mx--;
+            cnt[a[s++]]--;
+        }
+        while(e < y){
+            if(cnt[a[e + 1]] == 0) mx++;
+            cnt[a[++e]]++;
+        }
+        while(e > y){
+            if(cnt[a[e]] == 1) mx--;
+            cnt[a[e--]]--;
+        }
+        res[ii] = mx;
+    }
+    for(int i = 0; i < q; i++) cout << res[i] << "\n";
+}
+
+int main() {
+    cin.tie(0)->sync_with_stdio(0);
+    int tc = 1;
+    // cin >> tc;
+    while (tc--) solve();
+}
