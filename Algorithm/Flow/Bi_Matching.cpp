@@ -1,7 +1,7 @@
 const int NMAX = 3005;
 
 vector<int> adj[NMAX];
-
+// n : A그룹 크기, m : B그룹 크기
 ll n, m, A[NMAX], B[NMAX];
 bool vis[NMAX];
 
