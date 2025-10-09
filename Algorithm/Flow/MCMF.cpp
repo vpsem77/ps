@@ -46,7 +46,7 @@ bool spfa(int s, int t) {
     }
     return ok;
 }
-
+// s: 시작점 t: 끝점
 pair<int,int> mcmf(int s, int t) {
     int min_cost = 0, max_flow = 0, flow, rev;
     while (spfa(s, t)) {
