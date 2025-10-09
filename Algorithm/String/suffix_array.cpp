@@ -1,4 +1,7 @@
 // thank you for djs100201
+// O(nlog^2n)
+// sa[i]: 사전순으로 i번째 위치의 접미사가 원래 문자열의 몇 번째 문자부터 시작하냐 
+// lcp[i]: 정렬된 접미사들끼리, 인접한 접미사와 몇 칸까지 겹치냐
 class LCP {
    public:
     string s;
