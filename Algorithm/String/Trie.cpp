@@ -1,8 +1,8 @@
 const int ROOT = 1;
 int unused = 2;
-const int MX = 10000 * 500 + 5;
-bool chk[MX];
-int nxt[MX][26];
+const int NMAX = 10000 * 500 + 5;
+bool chk[NMAX];
+int nxt[NMAX][26];
 int c2i(char c){
     return c - 'a';
 }
