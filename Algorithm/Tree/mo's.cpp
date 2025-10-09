@@ -1,4 +1,5 @@
 //13547 ac code
+//l, r사이에 서로다른 수의 개수
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
