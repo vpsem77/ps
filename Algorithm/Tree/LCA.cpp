@@ -1,7 +1,7 @@
-const int k = 19;
+const int NMAX = 100005, k = 19;
 
-vector<ll> tree[100005], h(100005);
-vector<vector<ll>> sps(k, vector<ll>(100005));
+vector<ll> tree[NMAX], h(NMAX);
+vector<vector<ll>> sps(k, vector<ll>(NMAX));
 
 void dfs(ll cur, ll par) {
     for (auto nxt : tree[cur]) {
