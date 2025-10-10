@@ -35,9 +35,9 @@ ll lca(ll u, ll v) {
     return sps[0][u];   
 }
 
- dfs(1, 0);
-  for (int j = 1; j < k; j++) {
-      for (int i = 1; i <= n; i++) {
-          sps[j][i] = sps[j - 1][sps[j - 1][i]];
-      }
+dfs(1, 0);
+for (int j = 1; j < k; j++) {
+  for (int i = 1; i <= n; i++) {
+      sps[j][i] = sps[j - 1][sps[j - 1][i]];
   }
+}
